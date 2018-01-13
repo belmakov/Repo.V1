@@ -1,0 +1,28 @@
+﻿@model DashBoard.Models.SectionViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Create New Section";
+}
+<h2>Create Section</h2>
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <table>
+        <tr>
+            <td><label asp-for="Name"></label></td>
+            <td><input asp-for="Name" /></td>
+            <td><span asp-validation-for="Name"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Region"></label></td>
+            <td><select asp-for="Region" asp-items=@((SelectList)ViewData["REGION_NAMES"])></select></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Zone"></label></td>
+            <td><select asp-for="Zone" asp-items="Html.GetEnumSelectList<Zone>()"></select></td>
+        </tr>
+    </table>
+    <input type="submit" value="Create" />
+</form>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,10 +1,8 @@
 ﻿namespace FactsDatabase.Entities
 {
-    public enum Zone
+    public class Zone
     {
-        East,
-        West,
-        North,
-        South
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

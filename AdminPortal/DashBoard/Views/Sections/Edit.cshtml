@@ -1,0 +1,20 @@
+﻿@model DashBoard.Models.SectionViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = $"Edit Section - {Model.Name}";
+}
+<h2>Edit Section</h2>
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="All"></div>
+    <table>
+        <tr>
+            <td><label asp-for="Name"></label></td>
+            <td><input asp-for="Name" value="@Model.Name"/></td>
+            <td><span asp-validation-for="Name"></span></td>
+        </tr>
+    </table>
+    <input type="submit" value="Save" />
+</form>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

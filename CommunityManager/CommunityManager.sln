@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityPortal", "Communit
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CommunityMgmtDb", "CommunityMgmtDb\CommunityMgmtDb.sqlproj", "{CEDA29D6-796F-474E-A03B-1D2822FDEF73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunityMgmtDataModel", "CommunityMgmtDataModel\CommunityMgmtDataModel.csproj", "{C1864D57-1A23-4A08-BCBC-DD43941B5994}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,10 +23,6 @@ Global
 		{CEDA29D6-796F-474E-A03B-1D2822FDEF73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEDA29D6-796F-474E-A03B-1D2822FDEF73}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CEDA29D6-796F-474E-A03B-1D2822FDEF73}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{C1864D57-1A23-4A08-BCBC-DD43941B5994}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1864D57-1A23-4A08-BCBC-DD43941B5994}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1864D57-1A23-4A08-BCBC-DD43941B5994}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1864D57-1A23-4A08-BCBC-DD43941B5994}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

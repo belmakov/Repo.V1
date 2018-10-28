@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace CommunityMgmtPortal.Models
 {
-    public partial class Community
+    public partial class Tenant
     {
-        public Community()
+        public Tenant()
         {
-            Block = new HashSet<Block>();
+            TenantAmenityEntitlement = new HashSet<TenantAmenityEntitlement>();
         }
 
         public Guid Id { get; set; }
@@ -18,14 +18,14 @@ namespace CommunityMgmtPortal.Models
         public bool Active { get; set; }
         public string Tags { get; set; }
         public string Comments { get; set; }
-        public string Name { get; set; }
-        public Guid LocationId { get; set; }
-        public Guid SubAreaId { get; set; }
+        public bool Primary { get; set; }
+        public Guid ContactId { get; set; }
+        public Guid UnitId { get; set; }
 
+        public Contact Contact { get; set; }
         public User CreatedByNavigation { get; set; }
-        public Location Location { get; set; }
-        public SubArea SubArea { get; set; }
+        public Unit Unit { get; set; }
         public User UpdatedByNavigation { get; set; }
-        public ICollection<Block> Block { get; set; }
+        public ICollection<TenantAmenityEntitlement> TenantAmenityEntitlement { get; set; }
     }
 }

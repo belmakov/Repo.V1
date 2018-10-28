@@ -3,11 +3,12 @@ using System.Collections.Generic;
 
 namespace CommunityMgmtPortal.Models
 {
-    public partial class Community
+    public partial class Region
     {
-        public Community()
+        public Region()
         {
-            Block = new HashSet<Block>();
+            City = new HashSet<City>();
+            Location = new HashSet<Location>();
         }
 
         public Guid Id { get; set; }
@@ -19,13 +20,16 @@ namespace CommunityMgmtPortal.Models
         public string Tags { get; set; }
         public string Comments { get; set; }
         public string Name { get; set; }
-        public Guid LocationId { get; set; }
-        public Guid SubAreaId { get; set; }
+        public string Code { get; set; }
+        public string Timezone { get; set; }
+        public Guid RegionTypeId { get; set; }
+        public Guid CountryId { get; set; }
 
+        public Country Country { get; set; }
         public User CreatedByNavigation { get; set; }
-        public Location Location { get; set; }
-        public SubArea SubArea { get; set; }
+        public RegionType RegionType { get; set; }
         public User UpdatedByNavigation { get; set; }
-        public ICollection<Block> Block { get; set; }
+        public ICollection<City> City { get; set; }
+        public ICollection<Location> Location { get; set; }
     }
 }

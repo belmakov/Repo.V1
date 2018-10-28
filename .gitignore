@@ -24,6 +24,7 @@ Thumbs.db
 *.lib
 *.sbr
 *.dbmdl
+*.jfm
 obj/
 [Rr]elease*/
 _ReSharper*/
@@ -31,3 +32,4 @@ _ReSharper*/
 .vs/
 #Nuget packages folder
 packages/
+*.jfm

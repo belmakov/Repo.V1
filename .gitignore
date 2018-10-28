@@ -24,6 +24,7 @@ Thumbs.db
 *.lib
 *.sbr
 *.dbmdl
+*.jfm
 obj/
 [Rr]elease*/
 _ReSharper*/

@@ -11,7 +11,7 @@ using System;
 namespace DashBoard.Migrations
 {
     [DbContext(typeof(AdminDatabaseContext))]
-    [Migration("20180112202840_Initial")]
+    [Migration("20181107141609_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

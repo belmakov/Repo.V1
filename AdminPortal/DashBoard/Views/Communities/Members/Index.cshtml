@@ -1,0 +1,62 @@
+﻿@model MemberCollectionViewModel
+<p>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    @{
+        if (!Model.MemberInfos.Any())
+        {
+            <p style="margin-top: 20px;">You do not have any members in this apartment yet.</p>
+            <a asp-action="Create" asp-controller="Members" asp-route-apartmentId="@Model.ApartmentId">Create a member</a>
+        }
+        else
+        {
+            <h1>
+                Members in apartmet @Model.ApartmentId
+            </h1>
+            <a asp-action="Create" asp-controller="Members" asp-route-apartmentId="@Model.ApartmentId">Create New</a>
+            <div>
+                <table style="width:100%">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>IsAssociationMember</th>
+                        <th>Email</th>
+                        <th>PhoneNumber1</th>
+                        <th>PhoneNumber2</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    @foreach (var member in Model.MemberInfos)
+                    {
+                        <tr>
+                            <td>@member.Id</td>
+                            <td>@member.Name</td>
+                            <td>@member.IsAssociationMember</td>
+                            <td>@member.Email</td>
+                            <td>@member.PhoneNumber1</td>
+                            <td>@member.PhoneNumber2</td>
+                            <td><a asp-action="Edit" asp-route-id="@member.Id" asp-controller="Members">Edit</a></td>
+                            <td><a asp-action="Delete" asp-route-id="@member.Id" asp-controller="Members">Delete</a></td>
+                        </tr>
+                    }
+                </table>
+            </div>
+
+        }
+    }
+</p>

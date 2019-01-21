@@ -13,7 +13,6 @@ namespace DashBoard.Models
         public string Name { get; set; }
         //public object Photo { get; set; }
         public Address Address{ get; set; }
-        [ForeignKey("CommunityForeignKey")]
-        public Community Community { get; set; }
+        //public Community Community { get; set; }
     }
 }

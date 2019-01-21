@@ -1,0 +1,33 @@
+﻿@model ApartMentViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = $"Edit Apartment - {Model.Number}";
+}
+<h2>Edit Apartment</h2>
+<form asp-action="Edit" method="post" asp-controller="Apartments">
+    <div asp-validation-summary="All"></div>
+    <table>
+        <tr>
+            <td><label asp-for="Number"></label></td>
+            <td><input asp-for="Number" value="@Model.Number" /></td>
+            <td><span asp-validation-for="Number"></span></td>
+        <tr>
+            <td><label asp-for="BlockId"></label></td>
+            <td><select asp-for="BlockId" asp-items=@Model.BlockNames></select></td>
+        </tr>
+        <tr>
+            <td><label asp-for="IsRented"></label></td>
+            <td><input type="checkbox" asp-for="IsRented" /></td>
+        </tr>
+        <tr>
+            <td><input type="hidden" asp-for="CommunityId" value=@Model.CommunityId /></td>
+        </tr>
+            <tr>
+            <td><input type="hidden" asp-for="ApartMentId" value=@Model.ApartMentId /></td>
+        </tr>
+    </table>
+    <input type="submit" value="Save" />
+</form>
+<div>
+    <a asp-action="Details" asp-controller="Communities" asp-route-communityId="@Model.CommunityId">Back to Blocks List</a>
+</div>

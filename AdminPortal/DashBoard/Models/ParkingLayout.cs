@@ -9,8 +9,7 @@ namespace DashBoard.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public List<ParkingSlot> ParkingSlots { get; set; }
-        [ForeignKey("CommunityForeignKey")]
-        public Community Community { get; set; }
+        //public List<ParkingSlot> ParkingSlots { get; set; }
+        //public Community Community { get; set; }
     }
 }

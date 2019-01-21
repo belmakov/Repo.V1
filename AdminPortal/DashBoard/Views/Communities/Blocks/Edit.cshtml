@@ -1,0 +1,21 @@
+﻿@model BlockViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = $"Edit Sub-Area - {Model.Name}";
+}
+<h2>Edit Block</h2>
+<form asp-action="Edit" method="post" asp-controller="Blocks">
+    <div asp-validation-summary="All"></div>
+    <table>
+        <tr>
+            <td><label asp-for="Name"></label></td>
+            <td><input asp-for="Name" value="@Model.Name" /></td>
+            <td><span asp-validation-for="Name"></span></td>
+            <td><input type="hidden" asp-for="Id" value=@Model.Id /></td>
+        </tr>
+    </table>
+    <input type="submit" value="Save" />
+</form>
+<div>
+    <a asp-action="Details" asp-controller="Communities" asp-route-communityId="@Model.CommunityId">Back to Blocks List</a>
+</div>

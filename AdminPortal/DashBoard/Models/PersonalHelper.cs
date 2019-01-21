@@ -12,8 +12,7 @@ namespace DashBoard.Models
         [MaxLength(50)]
         public string Name { get; set; }
         public Address ContactDetails { get; set; }
-        [ForeignKey("FlatForeignKey")]
-        public Flat Flat { get; set; }
+        //public Apartment Apartment { get; set; }
         public string Role { get; set; }
     }
 }

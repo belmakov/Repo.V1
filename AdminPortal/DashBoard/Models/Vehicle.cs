@@ -11,7 +11,6 @@ namespace DashBoard.Models
         public string VehicleType { get; set; }
         public string Brand { get; set; }
         public string Number { get; set; }
-        [ForeignKey("FlatForeignKey")]
-        public Flat Flat { get; set; }
+        //public Apartment Apartment { get; set; }
     }
 }

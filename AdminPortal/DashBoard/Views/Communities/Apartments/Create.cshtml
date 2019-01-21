@@ -1,0 +1,30 @@
+﻿@model ApartMentViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Create New Apartment";
+}
+<h2>Create ApartMent</h2>
+<form asp-action="Create" asp-controller="Apartments" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <table>
+        <tr>
+            <td><label asp-for="BlockId"></label></td>
+            <td><select asp-for="BlockId" asp-items=@((SelectList)ViewData["BLOCK_NAMES"])></select></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Number"></label></td>
+            <td><input asp-for="Number" placeholder="Apartment Number" /></td>
+            <td><span asp-validation-for="Number"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="IsRented"></label></td>
+            <td><input type="checkbox" asp-for="IsRented" /></td>
+        </tr>
+        <td><input type="hidden" asp-for="CommunityId" value=@Model.CommunityId /></td>
+        </tr>
+    </table>
+    <input type="submit" value="Create" />
+</form>
+<div>
+    <a asp-action="Details" asp-controller="Communities" asp-route-communityId="@Model.CommunityId">Back to Community</a>
+</div>

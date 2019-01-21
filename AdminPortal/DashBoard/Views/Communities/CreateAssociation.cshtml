@@ -1,0 +1,23 @@
+﻿@model AssociationViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Create New Association";
+}
+<h2>Create Association</h2>
+<form asp-action="CreateAssociation" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <table>
+        <tr>
+            <td><label asp-for="PresidentId"></label></td>
+            <td><select asp-for="PresidentId" asp-items=@((SelectList)ViewData["MEMBER_NAMES"])></select></td>
+        </tr>
+        <tr>
+            <td><label asp-for="SecretaryId"></label></td>
+            <td><select asp-for="SecretaryId" asp-items=@((SelectList)ViewData["MEMBER_NAMES"])></select></td>
+        </tr>
+    </table>
+    <input type="submit" value="Create" />
+</form>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

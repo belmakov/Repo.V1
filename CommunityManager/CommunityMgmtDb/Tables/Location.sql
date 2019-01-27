@@ -20,6 +20,6 @@
     CONSTRAINT [FK_Location_ToCreatedBy] FOREIGN KEY ([_CreatedBy]) REFERENCES [User]([_Id]), 
     CONSTRAINT [FK_Location_ToUpdatedBy] FOREIGN KEY ([_UpdatedBy]) REFERENCES [User]([_Id]), 
     CONSTRAINT [FK_Location_ToCity] FOREIGN KEY ([CityId]) REFERENCES [City]([_Id]), 
-    CONSTRAINT [FK_Location_ToRegion] FOREIGN KEY ([RegionId]) REFERENCES [REgion]([_Id]), 
+    CONSTRAINT [FK_Location_ToRegion] FOREIGN KEY ([RegionId]) REFERENCES [Region]([_Id]), 
     CONSTRAINT [FK_Location_ToCountry] FOREIGN KEY ([CountryId]) REFERENCES [Country]([_Id])
 )

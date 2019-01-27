@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CommunityMgmtPortal.Models
 {
-    public partial class Location
+    public partial class Location : BaseEntity
     {
         public Location()
         {
@@ -11,14 +11,6 @@ namespace CommunityMgmtPortal.Models
             Contact = new HashSet<Contact>();
         }
 
-        public Guid Id { get; set; }
-        public Guid CreatedBy { get; set; }
-        public DateTime Created { get; set; }
-        public DateTime Updated { get; set; }
-        public Guid UpdatedBy { get; set; }
-        public bool Active { get; set; }
-        public string Tags { get; set; }
-        public string Comments { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
         public string LocalityName { get; set; }

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DashBoard.Models.AreaViewModel>
+<p>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <h1>
+        The areas page.
+    </h1>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div>
+    <table style="width:100%">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Sub-Areas</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (var area in Model)
+        {
+        <tr>
+            <td>@area.Id</td>
+            <td>@area.Name</td>
+            <td>@area.City</td>
+            <td><a asp-action="SubAreaIndex" asp-route-id="@area.Id">Sub-Areas</a></td>
+            <td><a asp-action="Edit" asp-route-id="@area.Id">Edit</a></td>
+            <td><a asp-action="Delete" asp-route-id="@area.Id">Delete</a></td>
+        </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DashBoard.Models.SubAreaViewModel>
+<p>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <h1>
+        The Sub-areas page.
+    </h1>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div>
+    <table style="width:100%">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Area</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (var subarea in Model)
+        {
+            <tr>
+                <td>@subarea.Id</td>
+                <td>@subarea.Name</td>
+                <td>@subarea.Area</td>
+                <td><a asp-action="Edit" asp-route-id="@subarea.Id">Edit</a></td>
+                <td><a asp-action="Delete" asp-route-id="@subarea.Id">Delete</a></td>
+            </tr>
+        }
+    </table>
+</div>

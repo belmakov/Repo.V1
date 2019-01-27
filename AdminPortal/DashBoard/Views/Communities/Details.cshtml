@@ -1,0 +1,140 @@
+﻿@model DashBoard.Models.CommunityViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = $"Edit Section - {Model.Name}";
+}
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<div class="panel panel-default" style="margin-top: 25px;"
+     >
+    <div class="panel-heading" style="font-weight: bold">@Model.Name - [ @Model.SubArea, @Model.AreaName ]</div>
+    <div class="panel-body">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#association">Association</a></li>
+            <li><a data-toggle="tab" href="#block">Blocks</a></li>
+            <li><a data-toggle="tab" href="#apartment">Apartments</a></li>
+            <li><a data-toggle="tab" href="#amenety">Ameneties</a></li>
+            <li><a data-toggle="tab" href="#vendor">Vendors</a></li>
+            <li><a data-toggle="tab" href="#amcitem">AMC Items</a></li>
+            <li><a data-toggle="tab" href="#parkingLayout">Parking Layout</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="association" class="tab-pane fade in active">
+                @{
+                    if (@Model.Association == null)
+                    {
+                        <p style="margin-top: 20px;">You do not have an association yet.</p>
+                        <a asp-action="Create" asp-controller="Association" asp-route-id="@Model.Id">Create an Association</a>
+                    }
+                }
+            </div>
+            <div id="block" class="tab-pane fade">
+                <h3>Blocks</h3>
+                @{
+                    if (@Model.Blocks == null || !Model.Blocks.Any())
+                    {
+                        <p style="margin-top: 20px;">You do not have any blocks in this community yet.</p>
+                        <a asp-action="Create" asp-controller="Blocks" asp-route-communityId="@Model.Id">Create a Block</a>
+                    }
+                    else
+                    {
+                        <p>
+                            <a asp-action="Create" asp-controller="Blocks" asp-route-communityId="@Model.Id ">Create New</a>
+                        </p>
+                        <table style="width:100%">
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            @foreach (var block in Model.Blocks)
+                            {
+                                <tr>
+                                    <td>@block.Id</td>
+                                    <td>@block.Name</td>
+                                    <td><a asp-action="Edit" asp-controller="Blocks" asp-route-id="@block.Id">Edit</a></td>
+                                    <td><a asp-action="Delete" asp-controller="Blocks" asp-route-id="@block.Id">Delete</a></td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                }
+            </div>
+            <div id="apartment" class="tab-pane fade">
+                <h3>Apartments</h3>
+                @{
+                    if (@Model.Blocks == null || (!@Model.Blocks.Any()) ||
+                        !Model.Blocks.SelectMany(b => b.Flats).Any())
+                    {
+                        <p style="margin-top: 20px;">You do not have any apartments in this community yet.</p>
+                        <a asp-action="Create" asp-controller="Apartments" asp-route-communityId="@Model.Id">Create aan apartment</a>
+                    }
+                    else
+                    {
+                        <p>
+                            <a asp-action="Create" asp-controller="Apartments" asp-route-communityId="@Model.Id ">Create New</a>
+                        </p>
+                        <table style="width:100%">
+                            <tr>
+                                <th>Id</th>
+                                <th>Number</th>
+                                <th>Block</th>
+                                <th>IsRented</th>
+                                <th>Members</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            @foreach (var flat in Model.Blocks.SelectMany(b => b.Flats).OrderBy(f => f.Number))
+                            {
+                            <tr>
+                                <td>@flat.Id</td>
+                                <td>@flat.Number</td>
+                                <td>@flat.Block.Name</td>
+                                <td>@flat.IsRented</td>
+                                <td><a asp-action="Index" asp-controller="Members" asp-route-id="@flat.Id">Members</a></td>
+                                <td><a asp-action="Edit" asp-controller="Apartments" asp-route-id="@flat.Id">Edit</a></td>
+                                <td><a asp-action="Delete" asp-controller="Apartments" asp-route-id="@flat.Id">Delete</a></td>
+                            </tr>
+                            }
+                        </table>
+                    }
+                }
+            </div>
+            <div id="amenety" class="tab-pane fade">
+                <h3>Ameneties</h3>
+                <p>Some content in menu 2.</p>
+            </div>
+            <div id="vendor" class="tab-pane fade">
+                <h3>Vendors</h3>
+                <p>Some content in menu 2.</p>
+            </div>
+            <div id="amcitem" class="tab-pane fade">
+                <h3>AMC Items</h3>
+                <p>Some content in menu 2.</p>
+            </div>
+            <div id="parkingLayout" class="tab-pane fade">
+                <h3>Parking Layout</h3>
+                <p>Some content in menu 2.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to Communities List</a>
+</div>

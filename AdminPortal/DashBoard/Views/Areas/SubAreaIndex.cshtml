@@ -1,0 +1,43 @@
+﻿@model IEnumerable<DashBoard.Models.SubAreaViewModel>
+<p>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <h1>
+        Sub-Areas
+    </h1>
+    <div>
+        <table style="width:100%">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Area</th>
+            </tr>
+            @foreach (var subArea in Model)
+        {
+            <tr>
+                <td>@subArea.Id</td>
+                <td>@subArea.Name</td>
+                <td>@subArea.Area</td>
+            </tr>
+        }
+        </table>
+    </div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+

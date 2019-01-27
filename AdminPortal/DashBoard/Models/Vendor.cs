@@ -12,7 +12,6 @@ namespace DashBoard.Models
         public string Pupose { get; set; }
         public DateTime Schedule { get; set; }
         public Address Address { get; set; }
-        [ForeignKey("CommunityForeignKey")]
-        public Community Community { get; set; }
+        //public Community Community { get; set; }
     }
 }

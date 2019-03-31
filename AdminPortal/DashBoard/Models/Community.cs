@@ -6,6 +6,7 @@ namespace DashBoard.Models
 {
     public class Community
     {
+        [Key]
         public int CommunityId { get; set; }
         [Required(ErrorMessage ="Name is required.")]
         [MaxLength(50, ErrorMessage = "Name should be less than 50 characters.")]
@@ -14,7 +15,7 @@ namespace DashBoard.Models
         //public List<Amenety> Ameneties { get; set; }
         //public List<AmcItem> AmcItems { get; set; }
         //public List<Vendor> Vendors { get; set; }
-        public Association Association { get; set; }
+        //public Association Association { get; set; }
         //public ParkingLayout ParkingLayout { get; set; }
         /// <summary>
         /// Id, photo, contact details

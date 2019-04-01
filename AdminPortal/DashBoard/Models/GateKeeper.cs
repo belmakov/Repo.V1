@@ -12,7 +12,7 @@ namespace DashBoard.Models
         [MaxLength(50)]
         public string Name { get; set; }
         //public object Photo { get; set; }
-        public Address Address{ get; set; }
+        public Location Address{ get; set; }
         //public Community Community { get; set; }
     }
 }

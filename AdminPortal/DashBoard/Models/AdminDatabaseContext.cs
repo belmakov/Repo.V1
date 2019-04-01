@@ -24,6 +24,9 @@ namespace DashBoard.Models
         //public DbSet<ParkingSlot> ParkingSlots { get; set; }
         //public DbSet<PersonalHelper> PersonalHelpers { get; set; }
         //public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<User> Users { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Community>()
@@ -61,6 +64,11 @@ namespace DashBoard.Models
                 .WithMany(c => c.Members)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Contact>();
+            modelBuilder.Entity<User>()
+                .HasOne(b => b.UserContact);
+                
+                
         }
     }
 }

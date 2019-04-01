@@ -9,9 +9,9 @@ namespace DashBoard.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; } //TODO: Create a composite Id
-        public string Pupose { get; set; }
+        public string Purpose { get; set; }
         public DateTime Schedule { get; set; }
-        public Address Address { get; set; }
+        public Location Address { get; set; }
         //public Community Community { get; set; }
     }
 }

@@ -18,11 +18,11 @@ namespace DashBoard.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int id)
+        public IActionResult Edit(Guid id)
         {
             var apartment = _adminDatabaseContext.Flats.Include(f => f.Block).ThenInclude(b => b.Community)
                 .First(b => b.Id == id);
-            //ViewData["BLOCK_NAMES"] = new SelectList(Blocks(apartment.Block.Community.CommunityId), "Value", "Text", new SelectListItem
+            //ViewData["BLOCK_NAMES"] = new SelectList(Blocks(apartment.Block.Community.Id), "Value", "Text", new SelectListItem
             //{
             //    Value = apartment.Block.Id.ToString(),
             //    Text = apartment.Block.Name
@@ -33,8 +33,8 @@ namespace DashBoard.Controllers
                     IsRented = apartment.IsRented,
                     ApartMentId = apartment.Id,
                     Number = apartment.Number,
-                    CommunityId = apartment.Block.Community.CommunityId,
-                    BlockNames = Blocks(apartment.Block.Community.CommunityId).ToList(),
+                    CommunityId = apartment.Block.Community.Id,
+                    BlockNames = Blocks(apartment.Block.Community.Id).ToList(),
                     BlockId = apartment.Block.Id
                 });
         }
@@ -59,7 +59,7 @@ namespace DashBoard.Controllers
         }
 
         [HttpGet]
-        public IActionResult Create(int communityId)
+        public IActionResult Create(Guid communityId)
         {
             var model = new ApartMentViewModel{CommunityId = communityId};
             ViewData["BLOCK_NAMES"] = new SelectList(Blocks(communityId), "Value", "Text");
@@ -80,20 +80,20 @@ namespace DashBoard.Controllers
                 };
                 _adminDatabaseContext.Flats.Add(flat);
                 _adminDatabaseContext.SaveChanges();
-                return RedirectToAction("Details", "Communities", new {communityId = block.Community.CommunityId});
+                return RedirectToAction("Details", "Communities", new {communityId = block.Community.Id});
             }
             return View("Views/Communities/Apartments/Create.cshtml", model);
         }
 
         [HttpGet]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(Guid id)
         {
             var apartment = _adminDatabaseContext.Flats.Include(f => f.Block).ThenInclude(b => b.Community).First(f => f.Id == id);
             return View("Views/Communities/Apartments/Delete.cshtml", new ApartMentViewModel
             {
                 Number = apartment.Number,
                 BlockName = apartment.Block.Name,
-                CommunityId = apartment.Block.Community.CommunityId,
+                CommunityId = apartment.Block.Community.Id,
                 ApartMentId = id
             });
         }
@@ -106,13 +106,13 @@ namespace DashBoard.Controllers
             _adminDatabaseContext.Flats.Remove(apartment);
             _adminDatabaseContext.SaveChanges();
             return RedirectToAction("Details", "Communities",
-                new {communityId = apartment.Block.Community.CommunityId});
+                new {communityId = apartment.Block.Community.Id});
         }
 
-        private IEnumerable<SelectListItem> Blocks(int communityId) =>
+        private IEnumerable<SelectListItem> Blocks(Guid communityId) =>
             _adminDatabaseContext.Communities.Include(c => c.Blocks)
                 .AsNoTracking()
-                .First(c => c.CommunityId == communityId).Blocks
+                .First(c => c.Id == communityId).Blocks
                 .Select(m => new SelectListItem
                 {
                     Value = m.Id.ToString(),

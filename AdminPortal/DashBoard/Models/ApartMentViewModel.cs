@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -7,7 +8,7 @@ namespace DashBoard.Models
 {
     public class ApartMentViewModel
     {
-        public int ApartMentId { get; set; }
+        public Guid ApartMentId { get; set; }
         [Required(ErrorMessage = "Number should be less than 10 characters.")]
         [MaxLength(10)]
         public string Number { get; set; }
@@ -23,9 +24,9 @@ namespace DashBoard.Models
         public Block Block { get; set; }
         [BindProperty]
         [Display(Name = "Block")]
-        public int BlockId { get; set; }
+        public Guid BlockId { get; set; }
         [BindProperty]
-        public int CommunityId { get; set; }
+        public Guid CommunityId { get; set; }
         public string BlockName { get; set; }
         public IEnumerable<SelectListItem> BlockNames { get; set; }
     }

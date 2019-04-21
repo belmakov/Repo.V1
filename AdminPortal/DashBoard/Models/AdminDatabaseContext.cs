@@ -26,7 +26,9 @@ namespace DashBoard.Models
         //public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<User> Users { get; set; }
-
+        public DbSet<Attachment> Attachments { get; set; }
+        public DbSet<AttachmentBlob> AttachmentBlobs { get; set; }
+    
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Community>()
@@ -59,16 +61,18 @@ namespace DashBoard.Models
                 .WithMany(c => c.Apartments)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<Member>()
-                .HasOne(b => b.Apartment)
-                .WithMany(c => c.Members)
-                .IsRequired()
-                .OnDelete(DeleteBehavior.Cascade);
+            //modelBuilder.Entity<Member>()
+            //    .HasOne(b => b.Apartment)
+            //    .WithMany(c => c.Tenants)
+            //    .IsRequired()
+            //    .OnDelete(DeleteBehavior.Cascade);
             modelBuilder.Entity<Contact>();
             modelBuilder.Entity<User>()
                 .HasOne(b => b.UserContact);
-                
-                
+            modelBuilder.Entity<Attachment>();
+            modelBuilder.Entity<AttachmentBlob>();
+
+
         }
     }
 }

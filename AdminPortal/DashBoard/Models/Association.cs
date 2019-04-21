@@ -9,7 +9,7 @@ namespace DashBoard.Models
         public int Id { get; set; }
         [Required(ErrorMessage = "Name should be less than 50 characters.")]
         [MaxLength(50)]
-        public List<Member> AssociationMembers { get; set; }
+        public List<Member> Members { get; set; }
         public Member President { get; set; }
         public Member Secretary { get; set; }
         public List<Member> Treasurers { get; set; }

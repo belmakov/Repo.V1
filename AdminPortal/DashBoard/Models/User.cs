@@ -7,10 +7,15 @@ namespace DashBoard.Models
 {
     public class User
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
+        public String Comments { get; set; }
+        public Boolean Active { get; set; }
+        public Guid CreatedBy { get; set; }
+        public DateTime Created { get; set; }
+        public Guid UpdatedBy { get; set; }
+        public DateTime Updated { get; set; }
         public String Username { get; set; }
         public String Password { get; set; }
-        public bool Active { get; set; }
         public Contact UserContact { get; set; }
     }
 }

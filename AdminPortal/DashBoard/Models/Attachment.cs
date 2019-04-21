@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace DashBoard.Models
 {
-    public class Contact
+    public class Attachment
     {
-        [Key]
         public Guid Id { get; set; }
         public String Comments { get; set; }
         public Boolean Active { get; set; }
@@ -16,12 +14,11 @@ namespace DashBoard.Models
         public DateTime Created { get; set; }
         public Guid UpdatedBy { get; set; }
         public DateTime Updated { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public Location Address { get; set; }
-        public string Phone { get; set; }
-        public string Mobile { get; set; }
-        public string Email { get; set; }
-        public Attachment Image { get; set; }
+        public String Name { get; set; }
+        public String Description { get; set; }
+        public String Type { get; set; }
+        public String FileName { get; set; }
+        public String FileExtension { get; set; }
+        public Int32 FileSize { get; set; }
     }
 }

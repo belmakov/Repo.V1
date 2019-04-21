@@ -22,7 +22,7 @@ namespace DashBoard.Controllers
             var communities = _adminDatabaseContext.Communities.Include(c => c.SubArea)
                 .Select(a => new CommunityViewModel
                 {
-                    Id = a.CommunityId,
+                    Id = a.Id,
                     Name = a.Name,
                     SubArea = a.SubArea.SubAreaName
                 });
@@ -33,7 +33,7 @@ namespace DashBoard.Controllers
             _adminDatabaseContext.SubAreas.Select
             (c => new SelectListItem
             {
-                Value = c.SubAreaId.ToString(),
+                Value = c.Id.ToString(),
                 Text = c.SubAreaName
             });
 
@@ -55,7 +55,7 @@ namespace DashBoard.Controllers
             }
             if (_adminDatabaseContext.Communities.Include(s => s.SubArea).Any(c =>
                 c.Name.Equals(viewModel.Name, StringComparison.OrdinalIgnoreCase) &&
-                c.SubArea.SubAreaId == viewModel.SubAreaId))
+                c.SubArea.Id == viewModel.SubAreaId))
             {
                 ViewData["SUBAREA_NAMES"] = SubAreas;
                 return View(viewModel);
@@ -65,7 +65,7 @@ namespace DashBoard.Controllers
                 var community = new Community
                 {
                     Name = viewModel.Name,
-                    SubArea = _adminDatabaseContext.SubAreas.First(c => c.SubAreaId == viewModel.SubAreaId)
+                    SubArea = _adminDatabaseContext.SubAreas.First(c => c.Id == viewModel.SubAreaId)
                 };
                 _adminDatabaseContext.Communities.Add(community);
                 _adminDatabaseContext.SaveChanges();
@@ -74,18 +74,18 @@ namespace DashBoard.Controllers
         }
 
         [HttpGet]
-        public IActionResult Details(int communityId)
+        public IActionResult Details(Guid communityId)
         {
             var community = _adminDatabaseContext.Communities.Include(c => c.SubArea).ThenInclude(s => s.Area)
                 .Include(c => c.Blocks).ThenInclude(b => b.Apartments)
-                .First(c => c.CommunityId == communityId);
+                .First(c => c.Id == communityId);
                 
             var viewModel = new CommunityViewModel
             {
                 Id = communityId,
                 Name = community.Name,
                 SubArea = community.SubArea.SubAreaName,
-                SubAreaId = community.SubArea.SubAreaId,
+                SubAreaId = community.SubArea.Id,
                 SubAreas = SubAreas.ToList(),
                 AreaName = community.SubArea.Area.AreaName,
                 Blocks = community.Blocks.Select(b => new BlockViewModel
@@ -119,9 +119,9 @@ namespace DashBoard.Controllers
         //}
 
         [HttpGet]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(Guid id)
         {
-            var community = _adminDatabaseContext.Communities.Include(c => c.SubArea).First(c => c.CommunityId == id);
+            var community = _adminDatabaseContext.Communities.Include(c => c.SubArea).First(c => c.Id == id);
             return View(new CommunityViewModel
             {
                 Id = id,
@@ -133,27 +133,27 @@ namespace DashBoard.Controllers
         [HttpPost]
         public IActionResult Delete(SubAreaViewModel areaViewModel)
         {
-            var community = _adminDatabaseContext.Communities.First(c => c.CommunityId == areaViewModel.Id);
+            var community = _adminDatabaseContext.Communities.First(c => c.Id == areaViewModel.Id);
             _adminDatabaseContext.Communities.Remove(community);
             _adminDatabaseContext.SaveChanges();
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public IActionResult CreateAssociation(int id)
+        public IActionResult CreateAssociation(Guid id)
         {
-            ViewData["MEMBER_NAMES"] = new SelectList(Members(id), "Value", "Text");
+            ViewData["MEMBER_NAMES"] = new SelectList(Tenants(id), "Value", "Text");
             return View();
         }
 
-        private IEnumerable<SelectListItem> Members(int communityId) =>
+        private IEnumerable<SelectListItem> Tenants(Guid communityId) =>
             _adminDatabaseContext.Communities.Include(c => c.Blocks).ThenInclude(b => b.Apartments)
-                .ThenInclude(f => f.Members).AsNoTracking()
-                .First(c => c.CommunityId == communityId).Blocks.SelectMany(b => b.Apartments).SelectMany(f => f.Members)
+                .ThenInclude(f => f.Tenants).AsNoTracking()
+                .First(c => c.Id == communityId).Blocks.SelectMany(b => b.Apartments).SelectMany(f => f.Tenants)
                 .Select(m => new SelectListItem
                 {
                     Value = m.Id.ToString(),
-                    Text = m.Name
+                    Text = m.FirstName + " " + m.LastName
                 }).ToList();
     }
 }

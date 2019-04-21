@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 namespace DashBoard.Controllers
@@ -20,19 +21,19 @@ namespace DashBoard.Controllers
             var areas = _adminDatabaseContext.Areas.Include(a => a.City)
                 .Select(a => new AreaViewModel
                 {
-                    Id = a.AreaId,
+                    Id = a.Id,
                     Name = a.AreaName,
                     City = a.City.CityName
                 });
             return View(areas);
         }
 
-        public IActionResult SubAreaIndex(int id, string name)
+        public IActionResult SubAreaIndex(Guid id, string name)
         {
-            var subAreas = _adminDatabaseContext.SubAreas.Include(a => a.Area).Where(s => s.Area.AreaId == id)
+            var subAreas = _adminDatabaseContext.SubAreas.Include(a => a.Area).Where(s => s.Area.Id == id)
                 .Select(a => new SubAreaViewModel
                 {
-                    Id = a.SubAreaId,
+                    Id = a.Id,
                     Name = a.SubAreaName,
                     Area = a.Area.AreaName
                 });
@@ -76,13 +77,13 @@ namespace DashBoard.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int id)
+        public IActionResult Edit(Guid id)
         {
-            var area = _adminDatabaseContext.Areas.Include(a => a.City).First(a => a.AreaId == id);
+            var area = _adminDatabaseContext.Areas.Include(a => a.City).First(a => a.Id == id);
             var cities = Cities.ToList();
             var viewModel = new AreaViewModel
             {
-                Id = area.AreaId,
+                Id = area.Id,
                 Name = area.AreaName,
                 City = area.City.CityName,
                 Cities = Cities,
@@ -98,7 +99,7 @@ namespace DashBoard.Controllers
             if (_adminDatabaseContext.Areas.Any(a =>
                             a.AreaName.Equals(viewModel.Name) && a.City.CityId == viewModel.CityId))
                 return View(viewModel);
-            var area = _adminDatabaseContext.Areas.First(a => a.AreaId == viewModel.Id);
+            var area = _adminDatabaseContext.Areas.First(a => a.Id == viewModel.Id);
             area.AreaName = viewModel.Name;
             area.City = _adminDatabaseContext.Cities.First(c => c.CityId == viewModel.CityId);
             _adminDatabaseContext.SaveChanges();
@@ -106,9 +107,9 @@ namespace DashBoard.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(Guid id)
         {
-            var area = _adminDatabaseContext.Areas.Include(a => a.City).First(a => a.AreaId == id);
+            var area = _adminDatabaseContext.Areas.Include(a => a.City).First(a => a.Id == id);
             return View(new AreaViewModel
             {
                 Id = id,
@@ -120,7 +121,7 @@ namespace DashBoard.Controllers
         [HttpPost]
         public IActionResult Delete(AreaViewModel areaViewModel)
         {
-            var area = _adminDatabaseContext.Areas.First(a => a.AreaId == areaViewModel.Id);
+            var area = _adminDatabaseContext.Areas.First(a => a.Id == areaViewModel.Id);
             _adminDatabaseContext.Areas.Remove(area);
             _adminDatabaseContext.SaveChanges();
             return RedirectToAction("Index");

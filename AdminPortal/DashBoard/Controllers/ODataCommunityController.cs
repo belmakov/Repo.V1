@@ -39,4 +39,29 @@ namespace AspNetCoreOData.Service.Controllers
             return Ok(_db.Communities.Where(t => t.Name.StartsWith("A")));
         }
     }
+
+    [ODataRoutePrefix("User")]
+    public class ODataUserController : ODataController
+    {
+        private AdminDatabaseContext _db;
+
+        public ODataUserController(AdminDatabaseContext DbContext)
+        {
+            _db = DbContext;
+        }
+
+        [ODataRoute]
+        [EnableQuery(PageSize = 20, AllowedQueryOptions = AllowedQueryOptions.All)]
+        public IActionResult Get()
+        {
+            return Ok(_db.Users.AsQueryable());
+        }
+
+        [ODataRoute("({key})")]
+        [EnableQuery(PageSize = 20, AllowedQueryOptions = AllowedQueryOptions.All)]
+        public IActionResult Get([FromODataUri] int key)
+        {
+            return Ok(_db.Users.Find(key));
+        }
+    }
 }

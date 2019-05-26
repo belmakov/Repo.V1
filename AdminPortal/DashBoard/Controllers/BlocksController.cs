@@ -20,11 +20,11 @@ namespace DashBoard.Controllers
         {
             var block = _adminDatabaseContext.Blocks.Include(b => b.Community).First(b => b.Id == id);
             return View("Views/Communities/BlockNames/Edit.cshtml",
-                new BlockViewModel {Id = block.Id, Name = block.Name, CommunityId = block.Community.Id});
+                new SectionViewModel {Id = block.Id, Name = block.Name, CommunityId = block.Community.Id});
         }
 
         [HttpPost]
-        public IActionResult Edit(BlockViewModel model)
+        public IActionResult Edit(SectionViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -39,16 +39,16 @@ namespace DashBoard.Controllers
         [HttpGet]
         public IActionResult Create(Guid communityId)
         {
-            var model = new BlockViewModel {CommunityId = communityId};
+            var model = new SectionViewModel {CommunityId = communityId};
             return View("Views/Communities/BlockNames/Create.cshtml", model);
         }
 
         [HttpPost]
-        public IActionResult Create(BlockViewModel model)
+        public IActionResult Create(SectionViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var block = new Block
+                var block = new Section
                 {
                     Name = model.Name,
                     Community = _adminDatabaseContext.Communities.First(c => c.Id == model.CommunityId)
@@ -64,7 +64,7 @@ namespace DashBoard.Controllers
         public IActionResult Delete(Guid id)
         {
             var block = _adminDatabaseContext.Blocks.Include(b => b.Community).First(b => b.Id == id);
-            return View("Views/Communities/BlockNames/Delete.cshtml", new BlockViewModel
+            return View("Views/Communities/BlockNames/Delete.cshtml", new SectionViewModel
             {
                 Id = block.Id,
                 Name = block.Name,
@@ -73,7 +73,7 @@ namespace DashBoard.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(BlockViewModel model)
+        public IActionResult Delete(SectionViewModel model)
         {
             var block = _adminDatabaseContext.Blocks.Include(b => b.Community).First(b => b.Id == model.Id);
             _adminDatabaseContext.Blocks.Remove(block);

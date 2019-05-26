@@ -12,8 +12,8 @@ namespace DashBoard.Models
         public DbSet<Area> Areas { get; set; }
         public DbSet<SubArea> SubAreas { get; set; }
         public DbSet<Community> Communities { get; set; }
-        public DbSet<Apartment> Flats { get; set; }
-        public DbSet<Block> Blocks { get; set; }
+        public DbSet<Unit> Flats { get; set; }
+        public DbSet<Section> Blocks { get; set; }
         public DbSet<Association> Associations { get; set; }
         //public DbSet<Vendor> Vendors { get; set; }
         //public DbSet<AmcItem> AmcItems { get; set; }
@@ -51,12 +51,12 @@ namespace DashBoard.Models
                 .WithMany(c => c.Cities)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<Block>()
+            modelBuilder.Entity<Section>()
                 .HasOne(b => b.Community)
                 .WithMany(c => c.Blocks)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<Apartment>()
+            modelBuilder.Entity<Unit>()
                 .HasOne(b => b.Block)
                 .WithMany(c => c.Apartments)
                 .IsRequired()

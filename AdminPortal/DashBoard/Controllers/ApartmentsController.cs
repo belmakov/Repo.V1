@@ -72,7 +72,7 @@ namespace DashBoard.Controllers
             if (ModelState.IsValid)
             {
                 var block = _adminDatabaseContext.Blocks.Include(b => b.Community).First(b => b.Id == model.BlockId);
-                var flat = new Apartment
+                var flat = new Unit
                 {
                     Number = model.Number,
                     IsRented = model.IsRented,

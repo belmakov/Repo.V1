@@ -12,7 +12,7 @@ namespace DashBoard.Models
         [Required(ErrorMessage = "Name is required.")]
         [MaxLength(50, ErrorMessage ="Name should be less than 50 characters.")]
         public string Name { get; set; }
-        public string Area { get; set; }
+        public string AreaName { get; set; }
         [BindProperty]
         [Display(Name = "Area")]
         public Guid AreaId { get; set; }

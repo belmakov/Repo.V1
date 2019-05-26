@@ -21,7 +21,7 @@ namespace DashBoard.Models
         //public List<PersonalHelper> Drivers { get; set; }
         //public List<PersonalHelper> Cooks { get; set; }
         //public List<PersonalHelper> BabySitters { get; set; }
-        public Block Block { get; set; }
+        public Section Block { get; set; }
         [BindProperty]
         [Display(Name = "Block")]
         public Guid BlockId { get; set; }

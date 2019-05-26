@@ -22,8 +22,8 @@ namespace DashBoard.Controllers
                 .Select(a => new SubAreaViewModel
                 {
                     Id = a.Id,
-                    Name = a.SubAreaName,
-                    Area = a.Area.AreaName
+                    Name = a.Name,
+                    AreaName = a.Area.Name
                 });
             return View(subAreas);
         }
@@ -39,7 +39,7 @@ namespace DashBoard.Controllers
                 (c => new SelectListItem
                 {
                     Value = c.Id.ToString(),
-                    Text = c.AreaName
+                    Text = c.Name
                 });
 
         [HttpPost]
@@ -47,7 +47,7 @@ namespace DashBoard.Controllers
         {
             if (!ModelState.IsValid) return View(viewModel);
             if (_adminDatabaseContext.SubAreas.Any(a =>
-                a.SubAreaName.Equals(viewModel.Name) && a.Area.Id == viewModel.AreaId))
+                a.Name.Equals(viewModel.Name) && a.Area.Id == viewModel.AreaId))
             {
                 ModelState.AddModelError("", "A sub-area with this name already exists!");
                 ViewData["AREA_NAMES"] = Areas;
@@ -55,7 +55,7 @@ namespace DashBoard.Controllers
             }
             var subArea = new SubArea
             {
-                SubAreaName = viewModel.Name,
+                Name = viewModel.Name,
                 Area = _adminDatabaseContext.Areas.First(c => c.Id== viewModel.AreaId)
             };
             _adminDatabaseContext.SubAreas.Add(subArea);
@@ -70,8 +70,8 @@ namespace DashBoard.Controllers
             var viewModel = new SubAreaViewModel
             {
                 Id = subArea.Id,
-                Name = subArea.SubAreaName,
-                Area = subArea.Area.AreaName,
+                Name = subArea.Name,
+                AreaName = subArea.Area.Name,
                 AreaId = subArea.Area.Id,
                 Areas = Areas.ToList()
             };
@@ -83,14 +83,14 @@ namespace DashBoard.Controllers
         {
             if (!ModelState.IsValid) return View(viewModel);
             if (_adminDatabaseContext.SubAreas.Any(a =>
-                            a.SubAreaName.Equals(viewModel.Name) && a.Area.Id== viewModel.AreaId))
+                            a.Name.Equals(viewModel.Name) && a.Area.Id== viewModel.AreaId))
             {
                 ModelState.AddModelError("", "A sub-area with this name already exists!");
                 ViewData["AREA_NAMES"] = Areas;
                 return View(viewModel);
             }
             var subArea = _adminDatabaseContext.SubAreas.First(a => a.Id == viewModel.Id);
-            subArea.SubAreaName = viewModel.Name;
+            subArea.Name = viewModel.Name;
             subArea.Area = _adminDatabaseContext.Areas.First(c => c.Id == viewModel.AreaId);
             _adminDatabaseContext.SaveChanges();
             return RedirectToAction("Index");
@@ -103,8 +103,8 @@ namespace DashBoard.Controllers
             return View(new SubAreaViewModel
             {
                 Id = id,
-                Name = subArea.SubAreaName,
-                Area = subArea.Area.AreaName
+                Name = subArea.Name,
+                AreaName = subArea.Area.Name
             });
         }
 
@@ -122,8 +122,8 @@ namespace DashBoard.Controllers
                 .Select(a => new SubAreaViewModel
                 {
                     Id = a.Id,
-                    Name = a.SubAreaName,
-                    Area = a.Area.AreaName
+                    Name = a.Name,
+                    AreaName = a.Area.Name
                 });
             return View(subAreas);
         }

@@ -24,7 +24,7 @@ namespace DashBoard.Controllers
                 {
                     Id = a.Id,
                     Name = a.Name,
-                    SubArea = a.SubArea.SubAreaName
+                    SubArea = a.SubArea.Name
                 });
             return View(communities);
         }
@@ -34,7 +34,7 @@ namespace DashBoard.Controllers
             (c => new SelectListItem
             {
                 Value = c.Id.ToString(),
-                Text = c.SubAreaName
+                Text = c.Name
             });
 
         [HttpGet]
@@ -84,11 +84,11 @@ namespace DashBoard.Controllers
             {
                 Id = communityId,
                 Name = community.Name,
-                SubArea = community.SubArea.SubAreaName,
+                SubArea = community.SubArea.Name,
                 SubAreaId = community.SubArea.Id,
                 SubAreas = SubAreas.ToList(),
-                AreaName = community.SubArea.Area.AreaName,
-                Blocks = community.Blocks.Select(b => new BlockViewModel
+                AreaName = community.SubArea.Area.Name,
+                Blocks = community.Blocks.Select(b => new SectionViewModel
                 {
                     Id = b.Id,
                     CommunityId = communityId,
@@ -126,14 +126,14 @@ namespace DashBoard.Controllers
             {
                 Id = id,
                 Name = community.Name,
-                SubArea = community.SubArea.SubAreaName
+                SubArea = community.SubArea.Name
             });
         }
 
         [HttpPost]
-        public IActionResult Delete(SubAreaViewModel areaViewModel)
+        public IActionResult Delete(SubAreaViewModel subAreaViewModel)
         {
-            var community = _adminDatabaseContext.Communities.First(c => c.Id == areaViewModel.Id);
+            var community = _adminDatabaseContext.Communities.First(c => c.Id == subAreaViewModel.Id);
             _adminDatabaseContext.Communities.Remove(community);
             _adminDatabaseContext.SaveChanges();
             return RedirectToAction("Index");

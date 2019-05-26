@@ -22,8 +22,8 @@ namespace DashBoard.Controllers
                 .Select(a => new AreaViewModel
                 {
                     Id = a.Id,
-                    Name = a.AreaName,
-                    City = a.City.CityName
+                    Name = a.Name,
+                    CityName = a.City.Name
                 });
             return View(areas);
         }
@@ -34,8 +34,8 @@ namespace DashBoard.Controllers
                 .Select(a => new SubAreaViewModel
                 {
                     Id = a.Id,
-                    Name = a.SubAreaName,
-                    Area = a.Area.AreaName
+                    Name = a.Name,
+                    AreaName = a.Area.Name
                 });
             return View(subAreas);
         }
@@ -51,8 +51,8 @@ namespace DashBoard.Controllers
              _adminDatabaseContext.Cities.Select
                 (c => new SelectListItem
                 {
-                    Value = c.CityId.ToString(),
-                    Text = c.CityName
+                    Value = c.Id.ToString(),
+                    Text = c.Name
                 });
 
         [HttpPost]
@@ -60,7 +60,7 @@ namespace DashBoard.Controllers
         {
             if (!ModelState.IsValid) return View(viewModel);
             if (_adminDatabaseContext.Areas.Any(a =>
-                a.AreaName.Equals(viewModel.Name) && a.City.CityId == viewModel.CityId))
+                a.Name.Equals(viewModel.Name) && a.City.Id == viewModel.CityId))
             {
                 ModelState.AddModelError("", "An area with this name already exists!");
                 ViewData["CITY_NAMES"] = Cities;
@@ -68,8 +68,8 @@ namespace DashBoard.Controllers
             }
             var area = new Area
             {
-                AreaName = viewModel.Name,
-                City = _adminDatabaseContext.Cities.First(c => c.CityId == viewModel.CityId)
+                Name = viewModel.Name,
+                City = _adminDatabaseContext.Cities.First(c => c.Id == viewModel.CityId)
             };
             _adminDatabaseContext.Areas.Add(area);
             _adminDatabaseContext.SaveChanges();
@@ -84,10 +84,10 @@ namespace DashBoard.Controllers
             var viewModel = new AreaViewModel
             {
                 Id = area.Id,
-                Name = area.AreaName,
-                City = area.City.CityName,
+                Name = area.Name,
+                CityName = area.City.Name,
                 Cities = Cities,
-                CityId = area.City.CityId
+                CityId = area.City.Id
             };
             return View(viewModel);
         }
@@ -97,11 +97,11 @@ namespace DashBoard.Controllers
         {
             if (!ModelState.IsValid) return View(viewModel);
             if (_adminDatabaseContext.Areas.Any(a =>
-                            a.AreaName.Equals(viewModel.Name) && a.City.CityId == viewModel.CityId))
+                            a.Name.Equals(viewModel.Name) && a.City.Id == viewModel.CityId))
                 return View(viewModel);
-            var area = _adminDatabaseContext.Areas.First(a => a.Id == viewModel.Id);
-            area.AreaName = viewModel.Name;
-            area.City = _adminDatabaseContext.Cities.First(c => c.CityId == viewModel.CityId);
+            var area = _adminDatabaseContext.Areas.First(a => a.Id == viewModel.CityId);
+            area.Name = viewModel.Name;
+            area.City = _adminDatabaseContext.Cities.First(c => c.Id == viewModel.CityId);
             _adminDatabaseContext.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -112,16 +112,16 @@ namespace DashBoard.Controllers
             var area = _adminDatabaseContext.Areas.Include(a => a.City).First(a => a.Id == id);
             return View(new AreaViewModel
             {
-                Id = id,
-                Name = area.AreaName,
-                City = area.City.CityName
+                CityId = id,
+                Name = area.Name,
+                CityName = area.City.Name
             });
         }
 
         [HttpPost]
         public IActionResult Delete(AreaViewModel areaViewModel)
         {
-            var area = _adminDatabaseContext.Areas.First(a => a.Id == areaViewModel.Id);
+            var area = _adminDatabaseContext.Areas.First(a => a.Id == areaViewModel.CityId);
             _adminDatabaseContext.Areas.Remove(area);
             _adminDatabaseContext.SaveChanges();
             return RedirectToAction("Index");

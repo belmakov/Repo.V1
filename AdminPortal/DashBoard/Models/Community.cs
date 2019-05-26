@@ -18,7 +18,7 @@ namespace DashBoard.Models
         [Required(ErrorMessage ="Name is required.")]
         [MaxLength(100, ErrorMessage = "Name should be less than 100 characters.")]
         public string Name { get; set; }
-        public List<Block> Blocks { get; set; }
+        public List<Section> Blocks { get; set; }
         //public List<Amenety> Ameneties { get; set; }
         //public List<AmcItem> AmcItems { get; set; }
         //public List<Vendor> Vendors { get; set; }

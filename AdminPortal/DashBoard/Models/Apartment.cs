@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DashBoard.Models
 {
-    public class Apartment
+    public class Unit
     {
         public Guid Id { get; set; }
         public String Comments { get; set; }
@@ -26,6 +26,6 @@ namespace DashBoard.Models
         //public List<PersonalHelper> Drivers { get; set; }
         //public List<PersonalHelper> Cooks { get; set; }
         //public List<PersonalHelper> BabySitters { get; set; }
-        public Block Block { get; set; }
+        public Section Block { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace DashBoard.Models
         public DateTime Created { get; set; }
         public Guid UpdatedBy { get; set; }
         public DateTime Updated { get; set; }
-        public string SubAreaName { get; set; }
+        public string Name { get; set; }
         public Area Area { get; set; }
         public ICollection<Community> Communities { get; set; }
     }

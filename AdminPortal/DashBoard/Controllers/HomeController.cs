@@ -24,20 +24,20 @@ namespace DashBoard.Controllers
                     new State
                     {
                         Country = "India",
-                        StateName = "Karnataka",
+                        Name = "Karnataka",
                         Cities = new List<City>
                         {
                             new City
                             {
-                                CityName = "Bangalore"
+                                Name = "Bangalore"
                             },
                             new City
                             {
-                                CityName = "Mysore"
+                                Name = "Mysore"
                             },
                             new City
                             {
-                                CityName = "Mangalore"
+                                Name = "Mangalore"
                             }
 
                         }

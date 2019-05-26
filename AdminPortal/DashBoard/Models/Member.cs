@@ -22,7 +22,7 @@ namespace DashBoard.Models
         public string Name { get; set; }
 
         public bool IsAssociationMember { get; set; }
-        public Apartment Apartment { get; set; }
+        public Unit Apartment { get; set; }
     }
 
     public class MemberCollectionViewModel

@@ -19,6 +19,6 @@ namespace DashBoard.Models
         public IEnumerable<SelectListItem> SubAreas { get; set; }
         public string AreaName { get; set; } 
         public AssociationViewModel Association { get; set; }
-        public IEnumerable<BlockViewModel> Blocks { get; set; }
+        public IEnumerable<SectionViewModel> Blocks { get; set; }
     }
 }

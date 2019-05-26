@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "Comunity Listing";
+    ViewData["Navbar-Title"] = "Community Administration";
+    ViewData["Sidebar-Selection"] = "community";
+}
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title" style="font-size:1.3em;padding-right:5px;font-weight:bold">Communities</span>
+                    <a href="/Admin/Community/Create" class="btn btn-info" role="button">New</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="display" id="communities" style="width:100%">
+                            <thead>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Country
+                            </th>
+                            <th>
+                                City
+                            </th>
+                            <th>
+                                Area
+                            </th>
+                            <th>
+                                Sub Area
+                            </th>
+                            </thead>
+                           
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#communities').dataTable({
+            "ajax": "/Admin/Community/All",
+            "columns": [
+                { "data": "community",render:communityRender },
+                { "data": "country" },
+                { "data": "city"},
+                { "data": "area"},
+                { "data": "subArea" },
+                { "data": "id", "visible": false }]
+            
+        });
+    });
+    function communityRender(data, type,row) {
+        return "<a href='/Admin/Community/Edit?id=" + row["id"] + "'>" + data + "</a>";
+    }
+</script>

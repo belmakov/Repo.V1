@@ -1,0 +1,170 @@
+﻿@model FaciTech.Apartment.UI.Areas.Admin.Models.CommunityWizardViewModel
+@{
+    ViewData["Title"] = "Comunity Listing";
+    ViewData["Navbar-Title"] = "Community Administration";
+    ViewData["Sidebar-Selection"] = "community";
+}
+<style>
+    .hidden {
+        display: none !important;
+    }
+
+    .datatable-action-button {
+        margin: 0 3px;
+    }
+
+
+    .checbox {
+        height: 50px;
+    }
+
+    .form-group input[type="checkbox"] {
+        display: none;
+    }
+
+        .form-group input[type="checkbox"] + .btn-group > label:first-child {
+            background-color: grey
+        }
+
+        .form-group input[type="checkbox"] + .btn-group > label span {
+            width: 20px;
+        }
+
+        .form-group input[type="checkbox"] + .btn-group {
+            height: 70px;
+        }
+
+            .form-group input[type="checkbox"] + .btn-group > label span:first-child {
+                display: none;
+            }
+
+            .form-group input[type="checkbox"] + .btn-group > label:last-child {
+                width: 120px;
+            }
+
+            .form-group input[type="checkbox"] + .btn-group > label span:last-child {
+                display: inline-block;
+            }
+
+        .form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+            display: inline-block;
+        }
+
+        .form-group input[type="checkbox"]:checked + .btn-group > label:first-child {
+            background-color: #007bff;
+        }
+
+        .form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+            display: none;
+        }
+</style>
+<script src="~/js/common.editable.datatable.js"></script>
+<script src="~/js/common.js"></script>
+<script src="~/external/bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    @if (@Model.CommunityViewModel == null)
+                    {
+                        <h4 class="card-title">Create new community</h4>
+                    }
+                    else
+                    {
+                        <h4 class="card-title">Edit community</h4>
+                    }
+                </div>
+
+                <div class="card-body">
+                    <div class="card-body" id="canvas">
+                        <section id="w4">
+                            <div class="wizard-progress wizard-progress-lg">
+                                <div class="steps-progress">
+                                    <div class="progress-indicator"></div>
+                                </div>
+                                <ul class="nav wizard-steps">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#basic" data-toggle="tab"><span><i class="fa fa-file-text" aria-hidden="true"></i></span>Basic Info</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#association" data-toggle="tab"><span><i class="fa fa-address-card" aria-hidden="true"></i></span>Association</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#amenities" data-toggle="tab"><span><i class="fa fa-bath" aria-hidden="true"></i></span>Amenities</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#blocks" data-toggle="tab"><span><i class="fa fa-building" aria-hidden="true"></i></span>Block / Floors</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#units" data-toggle="tab"><span><i class="fa fa-cubes" aria-hidden="true"></i></span>Units</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#residents" data-toggle="tab"><span><i class="fa fa-user" aria-hidden="true"></i></span>Residents</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#association-roles" data-toggle="tab"><span><i class="fa fa-group" aria-hidden="true"></i></span>Association Roles</a>
+                                    </li>
+                                    <li class="nav-item completed">
+                                        <a class="nav-link" href="#vendors" data-toggle="tab"><span><i class="fa fa-male" aria-hidden="true"></i></span>Vendors</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-content">
+                                <div id="basic" class="tab-pane active">
+                                    @await Html.PartialAsync("_Community", Model.CommunityViewModel)
+                                </div>
+                                <div id="association" class="tab-pane">
+                                    @await Html.PartialAsync("_Association", Model.CommunityViewModel)
+                                </div>
+                                <div id="amenities" class="tab-pane">
+                                    @await Html.PartialAsync("_Amenities",Model.AmenityViewModels)
+                                </div>
+                                <div id="blocks" class="tab-pane">
+                                    @await Html.PartialAsync("_ApartmentBlocks")
+                                </div>
+                                <div id="units" class="tab-pane">
+                                    @await Html.PartialAsync("_ApartmentUnits")
+                                </div>
+                                <div id="residents" class="tab-pane">
+                                    <form id="worksheetForm">
+                                        @await Html.PartialAsync("_ApartmentResidents")
+                                    </form>
+                                </div>
+                                <div id="association-roles" class="tab-pane">
+                                    <form id="worksheetForm">
+                                        @await Html.PartialAsync("_ApartmentAssociation")
+                                    </form>
+                                </div>
+                                <div id="vendors" class="tab-pane">
+                                    Vendor Details
+                                </div>
+                            </div>
+                        </section>
+                        @*<div class="card-footer" id="canvasFooter">
+                                <ul class="pager">
+                                    <li class="previous disabled">
+                                        <a><i class="fa fa-angle-left"></i> Previous</a>
+                                    </li>
+                                    <li class="finish hidden float-right">
+                                        <a>Finish</a>
+                                    </li>
+                                    <li class="next">
+                                        <a>Next <i class="fa fa-angle-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>*@
+                        <br />
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="~/js/community.js"></script>

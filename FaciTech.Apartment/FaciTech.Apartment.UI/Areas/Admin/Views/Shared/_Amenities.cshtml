@@ -1,0 +1,44 @@
+﻿@model List<List<FaciTech.Apartment.UI.Areas.Admin.Models.AmenityViewModel>>
+<form id="amenityForm" class="form-horizontal">
+    @foreach (var amenityRow in Model)
+    {
+        <div class="row">
+            <div class="col-sm-1">
+
+            </div>
+            @foreach (var amenity in amenityRow)
+            {
+                var id = "amenity_" + amenity.Id.ToString();
+                var check = amenity.Selected ? "checked='checked'" : "";
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <input type="checkbox" name="amenity" id="@id" autocomplete="off" @check data-id="@amenity.Id" />
+                        <div class="btn-group">
+                            <label for="@id" class="btn btn-outline-primary">
+                                <span class="fa fa-check fa-2x"></span>
+                                <span> </span>
+                            </label>
+                            <label for="@id" class="btn btn-outline-primary">
+                                @amenity.Name
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="col-sm-1">
+
+            </div>
+        </div>
+    }
+    <div class="row">
+        <div class="col-sm-6">
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group float-right" style="">
+                <div>
+                    <button type="button" class="btn btn-primary" id="save_amenities">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

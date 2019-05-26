@@ -3,3 +3,8 @@
 ################################################################################
 
 /FaciTech.Apartment/.vs/FaciTech.Apartment/v15
+/FaciTech.Apartment/FaciTech.Apartment.Database/bin/Debug
+/FaciTech.Apartment/FaciTech.Apartment.Database/obj
+/FaciTech.Apartment/.vs
+/FaciTech.Apartment/FaciTech.Apartment.Utils/bin/Debug/netcoreapp2.1
+/FaciTech.Apartment/FaciTech.Apartment.Utils/obj

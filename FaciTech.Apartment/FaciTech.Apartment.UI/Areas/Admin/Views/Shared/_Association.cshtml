@@ -1,0 +1,82 @@
+﻿@model FaciTech.Apartment.UI.Areas.Admin.Models.CommunityViewModel
+<form id="communityForm" role="form">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <div>
+                    <label for="community_name">Association Name</label>
+                    <input type="text" class="form-control" name="association_name" id="association_name" value="@Model?.association_name" required>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div>
+                            <label for="builder_name">Association Number</label>
+                            <input type="text" class="form-control" name="association_number" id="association_number" value="@Model?.association_number" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="country">Bank Name</label>
+                        <div>
+                            <input type="text" class="form-control" id="bank_name" name="bank_name" value="@Model?.bank_name">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="city">Account Number</label>
+                        <div>
+                            <input type="text" class="form-control" id="account_number" name="account_number" value="@Model?.account_number">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="area">IFSC</label>
+                            <div>
+                                <input type="text" class="form-control" id="ifsc" name="ifsc" value="@Model?.ifsc">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label for="sub_area">Branch Address</label>
+            <div>
+                <textarea class="form-control" id="branch_address" name="branch_address">@Model?.branch_address</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group float-right" style="">
+                <div>
+                    <button type="button" class="btn btn-primary" id="save_association_info">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

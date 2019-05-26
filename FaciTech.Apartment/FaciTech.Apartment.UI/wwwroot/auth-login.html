@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Login &mdash; Stisla</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="../external/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../external/fontawesome/all.css">
+
+  <!-- CSS Libraries -->
+  
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+   
+    html {
+      height: 100%;
+      overflow-y: hidden;
+    }
+    body {
+      min-height: 100%;
+    }
+  </style>
+</head>
+
+<body class="login-background">
+  <div>
+    <section class="section">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+            <div class="login-brand">
+              <!--D<img src="../assets/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle">-->
+            </div>
+
+            <div class="card card-primary">
+              <div class="card-header"><h4>Login</h4></div>
+              <div class="card-body" >
+                <form method="POST" action="#"  novalidate="">
+                  <div class="form-group">
+                    <label for="userid">User Id</label>
+                    <input id="userid" type="text" class="form-control" name="userid" tabindex="1" required autofocus>
+                    <div class="invalid-feedback">
+                      Please fill in your email
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div>
+                    	<label for="password">Password</label>
+                      <div class="float-right">
+                        <a href="auth-forgot-password.html">
+                          Forgot Password?
+                        </a>
+                      </div>
+                    </div>
+                    <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
+                    <div class="invalid-feedback">
+                      please fill in your password
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
+                      <label class="custom-control-label" for="remember-me">Remember Me</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                      Login
+                    </button>
+                  </div>
+                </form>
+                <div class="text-center mt-4 mb-3">
+                  <!--D<div class="text-job text-muted">Login With Social</div>-->
+                </div>
+                <div class="row sm-gutters">
+                  <div class="col-6">
+                    <!--D<a class="btn btn-block btn-social btn-facebook">
+                      <span class="fab fa-facebook"></span> Facebook
+                    </a>-->
+                  </div>
+                  <div class="col-6">
+                    <!--D<a class="btn btn-block btn-social btn-twitter">
+                      <span class="fab fa-twitter"></span> Twitter
+                    </a>-->
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="mt-5">
+              <!--Don't have an account? <a href="auth-register.html">Create One</a>-->
+            </div>
+            
+          </div>
+          
+        </div>
+       
+      </div>
+      <div class="copyright">
+        Copyright &copy; FaciTech 2019
+      </div>
+    </section>
+  </div>
+
+  <!-- General JS Scripts -->
+  <script src="../external/jquery/jquery-3.4.0.min.js"></script>
+  <script src="../external/popper/popper.min.js"></script>
+  <script src="../external/bootstrap/bootstrap.min.js"></script>
+  
+  <!-- JS Libraies -->
+
+  <!-- Template JS File -->
+ 
+
+  <!-- Page Specific JS File -->
+</body>
+</html>

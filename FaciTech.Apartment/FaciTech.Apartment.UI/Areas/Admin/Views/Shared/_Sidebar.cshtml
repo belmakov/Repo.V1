@@ -1,0 +1,56 @@
+﻿@{
+
+}
+<style>
+    
+</style>
+<div class="sidebar" data-color="blue">
+    <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+    <div class="logo" style="margin:20px">
+        <div class="simple-text logo-normal" style="float:left;padding-right:10px;">
+            <i class="fa fa-user-plus" style="font-size:1.3em"></i>
+        </div>
+        <span class="simple-text logo-normal" >
+            
+            Admin
+            
+        </span>
+    </div>
+    <div class="sidebar-wrapper" id="sidebar-wrapper">
+        <ul class="nav">
+            <li class=@getClass("community")>
+                <a href="/Admin">
+                    <i class="now-ui-icons design_app"></i>
+                    <p>Community</p>
+                </a>
+            </li>
+            <li class=@getClass("placeholder1")>
+                <a href="/Admin/Home/Placeholder1">
+                    <i class="now-ui-icons education_atom"></i>
+                    <p>Amenities</p>
+                </a>
+            </li>
+            <li class=@getClass("placeholder2")>
+                <a href="/Admin/Home/Placeholder2">
+                    <i class="now-ui-icons location_map-big"></i>
+                    <p>Areas</p>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+@functions {
+
+string getClass(string option)
+{
+    var selection = ViewData["Sidebar-Selection"] as string;
+    if (selection == option)
+    {
+        return "active";
+    }
+    return "";
+}
+}

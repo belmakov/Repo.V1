@@ -1,0 +1,109 @@
+﻿@model FaciTech.Apartment.UI.Areas.Admin.Models.CommunityViewModel
+<form id="communityForm" role="form">
+    <div class="row">
+        <div class="col-sm-6">
+            <input type="hidden" id="community_id" value="@Model?.community_id" />
+            <div class="form-group">
+                <div>
+                    <label for="community_name">Community Name</label>
+                    <input type="text" class="form-control" name="community_name" id="community_name" value="@Model?.community_name" required>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <div>
+                    <label for="builder_name">Builder Name</label>
+                    <input type="text" class="form-control" name="builder_name" id="builder_name" @Model?.builder_name required>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <div>
+                            <select class="form-control" id="country" name="country" data-id="@Model?.country"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <div>
+                            <select class="form-control" id="city" name="city" data-id="@Model?.city"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="area">Area</label>
+                        <div>
+                            <select class="form-control" id="area" name="area" data-id="@Model?.area"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="sub_area">Sub Area</label>
+                        <div>
+                            <select class="form-control" id="sub_area" name="sub_area" data-id="@Model?.sub_area"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <div>
+                            <textarea class="form-control form-text-area" id="address" name="address">@Model?.address</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="landmark">Landmark</label>
+                        <div>
+                            <input type="text" class="form-control form-text" id="landmark" name="landmark" value="@Model?.landmark">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="location_link">Location Link</label>
+                <div>
+                    <input type="text" class="form-control" id="location_link" name="location_link" value="@Model?.location_link">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group float-right" style="">
+                <div>
+                    <button type="button" class="btn btn-primary" id="save_basic_info">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

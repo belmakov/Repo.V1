@@ -1,11 +1,13 @@
-﻿namespace FaciTech.Apartment.UI.Areas.Admin.Models
+﻿using System;
+
+namespace FaciTech.Apartment.UI.Areas.Admin.Models
 {
     public class UnitViewModel
     {
         public string id { get; set; }
         public string flat { get; set; }
         public string block { get; set; }
-        public int block_id { get; set; }
+        public Guid block_id { get; set; }
         public string floor
         {
             get

@@ -1,0 +1,10 @@
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDb\bin\Debug\CommunityMgmtDb.dacpac
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDb\bin\Debug\CommunityMgmtDb.dll
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDb\bin\Debug\CommunityMgmtDb.pdb
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDb\obj\Debug\CommunityMgmtDb.dll
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDb\obj\Debug\CommunityMgmtDb.pdb
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDb\obj\Debug\CommunityMgmtDb.sqlprojAssemblyReference.cache
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDb\obj\Debug\Model.xml
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDb\obj\Debug\refactor.xml
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDb\obj\Debug\postdeploy.sql
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDb\obj\Debug\predeploy.sql

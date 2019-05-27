@@ -23,7 +23,7 @@ namespace FaciTech.Apartment.UI.Areas.Admin.Controllers
             communityWizardViewModel.Map(amenities);
             return View(communityWizardViewModel);
         }
-        public IActionResult Edit(int Id)
+        public IActionResult Edit(Guid Id)
         {
             CommunityWizardViewModel communityWizardViewModel = new CommunityWizardViewModel();
             CommunityViewModel communityViewModel = new CommunityViewModel();
@@ -47,7 +47,7 @@ namespace FaciTech.Apartment.UI.Areas.Admin.Controllers
             Community community = new Community();
             if (communityViewModel.community_id.Length != 0)
             {
-                community = _context.Community.Where(e => e.Id == Int32.Parse(communityViewModel.community_id.ToString())).FirstOrDefault();
+                community = _context.Community.Where(e => e.Id == Guid.Parse(communityViewModel.community_id.ToString())).FirstOrDefault();
             }
             switch (communityViewModel.source)
             {

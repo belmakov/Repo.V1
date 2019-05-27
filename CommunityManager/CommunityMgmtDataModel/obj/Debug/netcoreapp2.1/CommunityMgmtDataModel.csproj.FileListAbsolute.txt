@@ -1,0 +1,9 @@
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDataModel\bin\Debug\netcoreapp2.1\CommunityMgmtDataModel.deps.json
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDataModel\bin\Debug\netcoreapp2.1\CommunityMgmtDataModel.dll
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDataModel\bin\Debug\netcoreapp2.1\CommunityMgmtDataModel.pdb
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDataModel\obj\Debug\netcoreapp2.1\CommunityMgmtDataModel.csprojAssemblyReference.cache
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDataModel\obj\Debug\netcoreapp2.1\CommunityMgmtDataModel.csproj.CoreCompileInputs.cache
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDataModel\obj\Debug\netcoreapp2.1\CommunityMgmtDataModel.AssemblyInfoInputs.cache
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDataModel\obj\Debug\netcoreapp2.1\CommunityMgmtDataModel.AssemblyInfo.cs
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDataModel\obj\Debug\netcoreapp2.1\CommunityMgmtDataModel.dll
+D:\Users\belma\source\repos\Repo.V1\CommunityManager\CommunityMgmtDataModel\obj\Debug\netcoreapp2.1\CommunityMgmtDataModel.pdb

@@ -1,14 +1,16 @@
-﻿namespace FaciTech.Apartment.UI.Areas.Admin.Models
+﻿using System;
+
+namespace FaciTech.Apartment.UI.Areas.Admin.Models
 {
     public class CommunityViewModel
     {
         public string community_id { get; set; }
         public string community_name { get; set; }
         public string builder_name { get; set; }
-        public int country { get; set; }
-        public int city { get; set; }
-        public int area { get; set; }
-        public int sub_area { get; set; }
+        public Guid country { get; set; }
+        public Guid city { get; set; }
+        public Guid area { get; set; }
+        public Guid sub_area { get; set; }
         public string address { get; set; }
         public string landmark { get; set; }
         public string location_link { get; set; }

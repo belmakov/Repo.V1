@@ -27,7 +27,7 @@ namespace FaciTech.Apartment.UI
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FaciTech;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CommunityDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             services.AddDbContext<FaciTechContext>(options => options.UseSqlServer(connectionString));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

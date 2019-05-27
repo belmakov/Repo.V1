@@ -18,19 +18,19 @@ namespace FaciTech.Apartment.UI.Areas.Admin.Controllers
         {
             _context = context;
         }
-        public JsonResult Get(int communityId)
+        public JsonResult Get(Guid communityId)
         {
-            var units = _context.Unit.Include(e=>e.Block).Where(e => e.Block.CommunityId == communityId).ToList();
+            var units = _context.Unit.Include(e=>e.Section).Where(e => e.Section.CommunityId == communityId).ToList();
             List<UnitViewModel> unitViewModels = new List<UnitViewModel>();
             foreach (var unit in units)
             {
                 unitViewModels.Add(new UnitViewModel()
                 {
                     id = unit.Id.ToString(),
-                    flat = unit.UnitNumber,
+                    flat = unit.Number,
                     floor_number = unit.FloorNumber,
-                    block = unit.Block.BlockName,
-                    block_id = unit.Block.Id,
+                    block = unit.Section.Name,
+                    block_id = unit.Section.Id,
                     specification = unit.Specification
                 });
             }
@@ -38,11 +38,11 @@ namespace FaciTech.Apartment.UI.Areas.Admin.Controllers
         }
         public JsonResult Save([FromBody]UnitViewModel unitViewModel)
         {
-            var blockId = _context.Block.Where(e => e.BlockName == unitViewModel.block).Select(e=>e.Id).FirstOrDefault();
+            var blockId = _context.Block.Where(e => e.Name == unitViewModel.block).Select(e=>e.Id).FirstOrDefault();
             Unit unit = new Unit();
-            unit.BlockId =  unitViewModel.block_id;
+            unit.SectionId =  unitViewModel.block_id;
             unit.FloorNumber = unitViewModel.floor_number;
-            unit.UnitNumber = unitViewModel.flat;
+            unit.Number = unitViewModel.flat;
             unit.Specification = unitViewModel.specification;
 
             if (unitViewModel.id == null || unitViewModel.id == "")
@@ -51,7 +51,7 @@ namespace FaciTech.Apartment.UI.Areas.Admin.Controllers
             }
             else
             {
-                unit.Id = Int32.Parse(unitViewModel.id);
+                unit.Id = Guid.Parse(unitViewModel.id);
                 _context.Update(unit);
             }
             _context.SaveChanges();

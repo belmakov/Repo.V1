@@ -12,7 +12,7 @@ namespace FaciTech.Apartment.Database
         public DbSet<User> User { get; set; }
         public DbSet<Contact> Contact { get; set; }
         public DbSet<Community> Community { get; set; }
-        public DbSet<Block> Block { get; set; }
+        public DbSet<Section> Block { get; set; }
         public DbSet<CommunityLocation> CommunityLocation { get; set; }
         public DbSet<Country> Country{ get; set; }
         public DbSet<City> City { get; set; }

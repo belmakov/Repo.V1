@@ -17,7 +17,7 @@ namespace FaciTech.Apartment.UI.Areas.Admin.Controllers
         {
             _context = context;
         }
-        public JsonResult Get(int communityId)
+        public JsonResult Get(Guid communityId)
         {
             var communityBlocks = _context.Block.Where(e => e.Community.Id  == communityId).ToList();
             List<CommunityBlockViewModel> communityBlockViewModels = new List<CommunityBlockViewModel>();
@@ -26,7 +26,7 @@ namespace FaciTech.Apartment.UI.Areas.Admin.Controllers
                 communityBlockViewModels.Add(new CommunityBlockViewModel()
                 {
                     id = block.Id.ToString(),
-                    block_name = block.BlockName,
+                    block_name = block.Name,
                     no_of_floors = block.NoOfFloors,
                     community_id = block.CommunityId
                 });
@@ -35,8 +35,8 @@ namespace FaciTech.Apartment.UI.Areas.Admin.Controllers
         }
         public JsonResult Save([FromBody]CommunityBlockViewModel communityBlockViewModel)
         {
-            Block block = new Block();
-            block.BlockName = communityBlockViewModel.block_name;
+            Section block = new Section();
+            block.Name = communityBlockViewModel.block_name;
             block.NoOfFloors = communityBlockViewModel.no_of_floors;
             block.CommunityId = communityBlockViewModel.community_id;
 
@@ -46,7 +46,7 @@ namespace FaciTech.Apartment.UI.Areas.Admin.Controllers
             }
             else
             {
-                block.Id = Int32.Parse(communityBlockViewModel.id);
+                block.Id = Guid.Parse(communityBlockViewModel.id);
                 _context.Update(block);
             }
             communityBlockViewModel.id = block.Id.ToString();

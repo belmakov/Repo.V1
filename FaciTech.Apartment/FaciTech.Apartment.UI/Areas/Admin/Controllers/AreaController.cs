@@ -1,5 +1,6 @@
 ﻿using FaciTech.Apartment.Database;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Linq;
 
 namespace FaciTech.Apartment.UI.Areas.Admin.Controllers
@@ -12,7 +13,7 @@ namespace FaciTech.Apartment.UI.Areas.Admin.Controllers
         {
             _faciTechContext = faciTechContext;
         }
-        public JsonResult Index(int cityId)
+        public JsonResult Index(Guid cityId)
         {
             return Json(_faciTechContext.Area.Where(e => e.CityId == cityId).ToList());
         }

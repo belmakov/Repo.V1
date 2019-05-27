@@ -1,0 +1,12 @@
+D:\Users\belma\source\repos\Repo.V1\AdminPortal\DashBoard\bin\Release\netcoreapp2.0\DashBoard.deps.json
+D:\Users\belma\source\repos\Repo.V1\AdminPortal\DashBoard\bin\Release\netcoreapp2.0\DashBoard.runtimeconfig.json
+D:\Users\belma\source\repos\Repo.V1\AdminPortal\DashBoard\bin\Release\netcoreapp2.0\DashBoard.runtimeconfig.dev.json
+D:\Users\belma\source\repos\Repo.V1\AdminPortal\DashBoard\bin\Release\netcoreapp2.0\DashBoard.dll
+D:\Users\belma\source\repos\Repo.V1\AdminPortal\DashBoard\bin\Release\netcoreapp2.0\DashBoard.pdb
+D:\Users\belma\source\repos\Repo.V1\AdminPortal\DashBoard\obj\Release\netcoreapp2.0\DashBoard.csproj.CoreCompileInputs.cache
+D:\Users\belma\source\repos\Repo.V1\AdminPortal\DashBoard\obj\Release\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+D:\Users\belma\source\repos\Repo.V1\AdminPortal\DashBoard\obj\Release\netcoreapp2.0\DashBoard.AssemblyInfoInputs.cache
+D:\Users\belma\source\repos\Repo.V1\AdminPortal\DashBoard\obj\Release\netcoreapp2.0\DashBoard.AssemblyInfo.cs
+D:\Users\belma\source\repos\Repo.V1\AdminPortal\DashBoard\obj\Release\netcoreapp2.0\DashBoard.dll
+D:\Users\belma\source\repos\Repo.V1\AdminPortal\DashBoard\obj\Release\netcoreapp2.0\DashBoard.pdb
+D:\Users\belma\source\repos\Repo.V1\AdminPortal\DashBoard\obj\Release\netcoreapp2.0\DashBoard.csprojAssemblyReference.cache

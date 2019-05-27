@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace FaciTech.Apartment.UI.Areas.Admin.Models
 {
@@ -6,7 +7,7 @@ namespace FaciTech.Apartment.UI.Areas.Admin.Models
     {
         public string id { get; set; }
         public string block_name { get; set; }
-        public int community_id { get; set; }
+        public Guid community_id { get; set; }
         public int no_of_floors { get; set; }
         public List<KeyValuePair<int,string>> Floors
         {

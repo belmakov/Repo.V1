@@ -15,9 +15,9 @@ namespace FaciTech.Apartment.UI.Areas.Admin.Controllers
         {
             _faciTechContext = faciTechContext;
         }
-        public JsonResult Index(int countryId)
+        public JsonResult Index(Guid regionId)
         {
-            return Json(_faciTechContext.City.Where(e => e.CountryId == countryId).ToList());
+            return Json(_faciTechContext.City.Where(e => e.RegionId == regionId).ToList());
         }
     }
 }

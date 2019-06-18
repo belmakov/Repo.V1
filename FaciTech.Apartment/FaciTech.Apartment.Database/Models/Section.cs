@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -23,8 +24,11 @@ namespace FaciTech.Apartment.Database.Models
         [Required]
         public string Name {get;set;}
         public int NoOfFloors { get; set; }
+        [Required]
         public Guid CommunityId { get; set; }
-        [ForeignKey("CommunityId")]
+        [Required]
         public Community Community { get; set; }
+
+        public ICollection<Unit> Units { get; set; }
     }
 }

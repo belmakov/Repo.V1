@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FaciTech.Apartment.Database.Models
 {
-    public class Group
+    public class State
     {
         [Required]
         public Guid Id { get; set; }
@@ -22,8 +22,11 @@ namespace FaciTech.Apartment.Database.Models
         public DateTime Updated { get; set; }
         [Required]
         public String Name { get; set; }
+        [Required]
+        public Guid CountryId { get; set; }
+        [Required]
+        public Country Country { get; set; }
 
-        public IList<UserGroup> UserGroups { get; set; }
-        public IList<GroupRole> GroupRoles { get; set; }
+        public ICollection<City> Cities { get; set; }
     }
 }

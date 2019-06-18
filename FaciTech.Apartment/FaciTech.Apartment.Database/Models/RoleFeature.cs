@@ -5,10 +5,8 @@ using System.Text;
 
 namespace FaciTech.Apartment.Database.Models
 {
-    public class RegionType
+    public class RoleFeature
     {
-        [Required]
-        public Guid Id { get; set; }
         public String Comments { get; set; }
         [Required]
         public Boolean Inactive { get; set; }
@@ -20,7 +18,11 @@ namespace FaciTech.Apartment.Database.Models
         public Guid UpdatedBy { get; set; }
         [Required]
         public DateTime Updated { get; set; }
-        [Required]
-        public String Name { get; set; }
+
+        public Guid RoleId { get; set; }
+        public Role Role { get; set; }
+
+        public Guid FeatureId { get; set; }
+        public Feature Feature { get; set; }
     }
 }

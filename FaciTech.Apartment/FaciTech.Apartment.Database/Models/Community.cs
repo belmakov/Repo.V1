@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace FaciTech.Apartment.Database.Models
@@ -22,7 +23,6 @@ namespace FaciTech.Apartment.Database.Models
         [Required]
         public String Name { get; set; }
         [Required]
-        public Guid SubAreaId { get; set; }
         public String BuilderName { get; set; }
         public String Address { get; set; }
         public String Landmark { get; set; }
@@ -34,5 +34,12 @@ namespace FaciTech.Apartment.Database.Models
         public String AssociationBankBranchAddress { get; set; }
         public String AssociationBankIFSC { get; set; }
         public String AmenityIds { get; set; }
+
+        [Required]
+        public Guid SubAreaId { get; set; }
+        [Required]
+        public SubArea SubArea { get; set; }
+
+        public ICollection<Section> Sections { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace FaciTech.Apartment.Database.Models
@@ -24,7 +25,9 @@ namespace FaciTech.Apartment.Database.Models
         public string Salt { get; set; }
         [Required]
         public string Password { get; set; }
-        [Required]
+        public Guid? ContactId { get; set; }
         public Contact Contact { get; set; }
+
+        public IList<UserGroup> UserGroups { get; set; }
     }
 }

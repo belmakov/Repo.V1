@@ -22,5 +22,9 @@ namespace FaciTech.Apartment.Database.Models
         public DateTime Updated { get; set; }
         [Required]
         public String Name { get; set; }
+
+        public IList<RoleFeature> RoleFeatures { get; set; }
+        public IList<GroupRole> GroupRoles { get; set; }
+
     }
 }

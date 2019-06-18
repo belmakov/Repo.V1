@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace FaciTech.Apartment.Database.Models
@@ -21,7 +22,11 @@ namespace FaciTech.Apartment.Database.Models
         [Required]
         public string Name { get; set; }
         [Required]
-        public Guid AreaId { get; set; } 
+        public Guid AreaId { get; set; }
+        [Required]
+        public Area Area { get; set; }
         //Refactor to refer Country
+
+        public ICollection<Community> Communities { get; set; }
     }
 }

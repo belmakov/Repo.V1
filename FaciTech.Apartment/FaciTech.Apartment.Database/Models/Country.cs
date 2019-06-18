@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace FaciTech.Apartment.Database.Models
@@ -20,5 +21,7 @@ namespace FaciTech.Apartment.Database.Models
         public DateTime Updated { get; set; }
         [Required]
         public String Name { get; set; }
+
+        public ICollection<State> States { get; set; }
     }
 }

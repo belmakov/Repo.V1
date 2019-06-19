@@ -68,6 +68,10 @@ D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\bin
 D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\FaciTech.Apartment.UI.TagHelpers.input.cache
 D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\FaciTech.Apartment.UI.TagHelpers.output.cache
 D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\FaciTech.Apartment.UI.RazorCoreGenerate.cache
+D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\FaciTech.Apartment.UI.RazorTargetAssemblyInfo.cache
+D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\FaciTech.Apartment.UI.RazorTargetAssemblyInfo.cs
+D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\FaciTech.Apartment.UI.Views.pdb
+D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\FaciTech.Apartment.UI.csproj.CopyComplete
 D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Community\Create.g.cshtml.cs
 D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Home\Dummy.g.cshtml.cs
 D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Home\Index.g.cshtml.cs
@@ -90,7 +94,3 @@ D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj
 D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
 D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
 D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
-D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\FaciTech.Apartment.UI.RazorTargetAssemblyInfo.cache
-D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\FaciTech.Apartment.UI.RazorTargetAssemblyInfo.cs
-D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\FaciTech.Apartment.UI.Views.pdb
-D:\Users\belma\source\repos\Repo.V1\FaciTech.Apartment\FaciTech.Apartment.UI\obj\Debug\netcoreapp2.2\FaciTech.Apartment.UI.csproj.CopyComplete

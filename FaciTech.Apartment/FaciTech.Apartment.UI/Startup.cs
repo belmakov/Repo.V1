@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using FaciTech.Apartment.Database;
+using NJsonSchema;
+using NSwag.AspNetCore;
 
 namespace FaciTech.Apartment.UI
 {
@@ -27,9 +29,11 @@ namespace FaciTech.Apartment.UI
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CommunityDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<FaciTechContext>(options => options.UseSqlServer(connectionString));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +50,9 @@ namespace FaciTech.Apartment.UI
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseSwagger();
+            app.UseSwaggerUi3();
 
             app.UseMvc(routes =>
             {

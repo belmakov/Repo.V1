@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcQP9RoYILU2jX4CF47K5SwAAAAACAAAAAAAQZgAAAAEAACAAAABL/lQQ8nScnBoRH0vUc6TIeCjD+C++A9FkNVUGY4LlJAAAAAAOgAAAAAIAACAAAAAgmzjtfv8Q3lpt2rEQ8KMp4O/hkKALqA4ucphe6l2GD4AAAAAyEJ1KAaAjGBV5BdNa/6kBByDM3VZfj9cD04Vl5Uq2MhNnZHcWByWVZKF5dKcNxRC0V8R22lD9JqNiS8YwDBs6uQ2C86xc9OrWXn1pxDhWjTI9P2wA3KBpn9xN3es4aVVHBlGei1W/JSTOjZksikp56ZctmLZCl8trovp+M0tAvkAAAADNtq1NBpwqEriAQh73F091y3TaCK/wPkMFKf5BAwRtDshHpU/EiIyax1m/zVaynp7wL10jQrJZWrdIk4nSrDlE</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:facitechapartmentui20190619091408dbserver.database.windows.net,1433%3bInitial Catalog=FaciTechApartmentDb%3bUser Id=sysadmin%40facitechapartmentui20190619091408dbserver%3bPassword=ZAQ!2wsx</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="FaciTech.Apartment.Database.FaciTechContext">
+      <Value>Data Source=tcp:facitechapartmentui20190619091408dbserver.database.windows.net,1433%3bInitial Catalog=FaciTechApartmentDb%3bUser Id=sysadmin%40facitechapartmentui20190619091408dbserver%3bPassword=ZAQ!2wsx</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,207 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.UI\\FaciTech.Apartment.UI.csproj": {}
+  },
+  "projects": {
+    "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.Database\\FaciTech.Apartment.Database.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.Database\\FaciTech.Apartment.Database.csproj",
+        "projectName": "FaciTech.Apartment.Database",
+        "projectPath": "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.Database\\FaciTech.Apartment.Database.csproj",
+        "packagesPath": "C:\\Users\\belma\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.Database\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\belma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.UI\\FaciTech.Apartment.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.UI\\FaciTech.Apartment.UI.csproj",
+        "projectName": "FaciTech.Apartment.UI",
+        "projectPath": "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.UI\\FaciTech.Apartment.UI.csproj",
+        "packagesPath": "C:\\Users\\belma\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.UI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\belma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.Database\\FaciTech.Apartment.Database.csproj": {
+                "projectPath": "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.Database\\FaciTech.Apartment.Database.csproj"
+              },
+              "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.Utils\\FaciTech.Apartment.Utils.csproj": {
+                "projectPath": "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.Utils\\FaciTech.Apartment.Utils.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "NSwag.AspNetCore": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.Utils\\FaciTech.Apartment.Utils.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.Utils\\FaciTech.Apartment.Utils.csproj",
+        "projectName": "FaciTech.Apartment.Utils",
+        "projectPath": "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.Utils\\FaciTech.Apartment.Utils.csproj",
+        "packagesPath": "C:\\Users\\belma\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\belma\\source\\repos\\Repo.V1\\FaciTech.Apartment\\FaciTech.Apartment.Utils\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\belma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

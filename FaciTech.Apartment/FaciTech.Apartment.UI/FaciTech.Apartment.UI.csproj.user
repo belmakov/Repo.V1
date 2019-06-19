@@ -11,5 +11,6 @@
     <WebStackScaffolding_ViewDialogWidth>600</WebStackScaffolding_ViewDialogWidth>
     <WebStackScaffolding_DependencyDialogWidth>600</WebStackScaffolding_DependencyDialogWidth>
     <WebStackScaffolding_DbContextTypeFullName>FaciTech.Apartment.Database.FaciTechContext</WebStackScaffolding_DbContextTypeFullName>
+    <NameOfLastUsedPublishProfile>FaciTechApartmentUI20190619091408 - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
